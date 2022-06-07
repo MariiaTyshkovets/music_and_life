@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/react_project/static/css/main.e6c13ad2.css",
-    "main.js": "/react_project/static/js/main.63596cbb.js",
-    "index.html": "/react_project/index.html",
-    "main.e6c13ad2.css.map": "/react_project/static/css/main.e6c13ad2.css.map",
-    "main.63596cbb.js.map": "/react_project/static/js/main.63596cbb.js.map"
+    "main.css": "/music_and_life/static/css/main.5eef55d4.css",
+    "main.js": "/music_and_life/static/js/main.41e02f8b.js",
+    "static/media/six.png": "/music_and_life/static/media/six.6b97f925e4da2310f811.png",
+    "static/media/background.png": "/music_and_life/static/media/background.07b07519c6f42ed3e2f0.png",
+    "static/media/icon-gif.gif": "/music_and_life/static/media/icon-gif.6a87bea21dc8275d95f3.gif",
+    "static/media/slick.svg": "/music_and_life/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/music_and_life/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/music_and_life/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/music_and_life/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/music_and_life/index.html",
+    "main.5eef55d4.css.map": "/music_and_life/static/css/main.5eef55d4.css.map",
+    "main.41e02f8b.js.map": "/music_and_life/static/js/main.41e02f8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.63596cbb.js"
+    "static/css/main.5eef55d4.css",
+    "static/js/main.41e02f8b.js"
   ]
 }
