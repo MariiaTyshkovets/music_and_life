@@ -1,0 +1,12 @@
+.error a:hover {
+    color: rgb(240, 42, 16);
+}
+
+.white .error {
+    background-color: rgb(241, 241, 241, 0.6);
+}
+
+.dark .error {
+    /* background-color: rgba(173, 164, 164, 0.6); */
+    background-color: rgb(0, 0, 0, 0.6);
+}
