@@ -8,7 +8,7 @@ import InfoArtist from "../InfoArtist";
 import InfoAlbum from "../InfoAlbum";
 import AxiosError from "../AxiosError";
 import About from "../About";
-import NotFoudPage from "../NotFoudPage";
+import NotFoundPage from "../NotFoundPage";
 
 const Main = () => {
 
@@ -23,7 +23,7 @@ const Main = () => {
                     <Route path="/music_and_life/search/song/:id" element={<InfoSong />}/>
                     <Route path="/music_and_life/search/artist/:id" element={<InfoArtist />}/>
                     <Route path="/music_and_life/search/album/:id" element={<InfoAlbum />}/>
-                    <Route path="/music_and_life/*" element={<NotFoudPage />}/>
+                    <Route path="/music_and_life/*" element={<NotFoundPage />}/>
                 </Routes>
             </main>
         </>
