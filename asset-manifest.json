@@ -1,20 +1,26 @@
 {
   "files": {
-    "main.css": "/music_and_life/static/css/main.ca421840.css",
-    "main.js": "/music_and_life/static/js/main.0f2ac2a2.js",
+    "main.css": "/music_and_life/static/css/main.f269c4a7.css",
+    "main.js": "/music_and_life/static/js/main.07388aea.js",
+    "static/media/pngwing.com.png": "/music_and_life/static/media/pngwing.com.b8aef9378b251d9a7af0.png",
+    "static/media/music-background.png": "/music_and_life/static/media/music-background.725ab5b8c7c85010c839.png",
     "static/media/six.png": "/music_and_life/static/media/six.6b97f925e4da2310f811.png",
     "static/media/background.png": "/music_and_life/static/media/background.07b07519c6f42ed3e2f0.png",
+    "static/media/Mariia.jpeg": "/music_and_life/static/media/Mariia.16acd41dbef74eb64b12.jpeg",
     "static/media/icon-gif.gif": "/music_and_life/static/media/icon-gif.6a87bea21dc8275d95f3.gif",
+    "static/media/github.png": "/music_and_life/static/media/github.553c66159c5672f25df6.png",
+    "static/media/linkedin.png": "/music_and_life/static/media/linkedin.1dd143a731afb245bf24.png",
+    "static/media/fb.png": "/music_and_life/static/media/fb.01a470d813915c298403.png",
     "static/media/slick.svg": "/music_and_life/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/music_and_life/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/music_and_life/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/music_and_life/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/music_and_life/index.html",
-    "main.ca421840.css.map": "/music_and_life/static/css/main.ca421840.css.map",
-    "main.0f2ac2a2.js.map": "/music_and_life/static/js/main.0f2ac2a2.js.map"
+    "main.f269c4a7.css.map": "/music_and_life/static/css/main.f269c4a7.css.map",
+    "main.07388aea.js.map": "/music_and_life/static/js/main.07388aea.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca421840.css",
-    "static/js/main.0f2ac2a2.js"
+    "static/css/main.f269c4a7.css",
+    "static/js/main.07388aea.js"
   ]
 }
