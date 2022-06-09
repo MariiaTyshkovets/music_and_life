@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading";
 import Footer from "../Footer";
 import './InfoSong.scss';
+import ButtonToTop from "../ButtonToTop";
 
 const InfoSong = () => {
 
@@ -14,8 +15,11 @@ const InfoSong = () => {
     const [text, setText] = useState('');
 
     const parameters = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        scrollToTop();
+
         let resultAPI = '';
         const options1 = {
             method: 'GET',
@@ -30,7 +34,7 @@ const InfoSong = () => {
         axios.request(options1).then(function (res) {   
             resultAPI = res.data.response.song;
         }).catch(function (error) {
-            console.error(error);
+            navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
             setResult(resultAPI);
             setLoadingResult(false);
@@ -53,13 +57,21 @@ const InfoSong = () => {
             lyric = res.data.response.lyrics.tracking_data;
             textSong = res.data.response.lyrics.lyrics.body.plain.replace(/\n/g, '<br/>') || '';
         }).catch(function (error) {
-            console.error(error);
+            navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
             setLyrics(lyric);
             setText(textSong);
             setLoadingLyric(false);
         });
     }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
    
     return (
         <>
@@ -69,11 +81,11 @@ const InfoSong = () => {
                 <div className="info">
                     <div className='info__about'>
                         <div className="info__img">
-                        <img src={result.header_image_url} alt={lyrics.title}/>
+                        <img src={result.header_image_url} alt={lyrics.title} title={result.full_title}/>
                         </div>
                         <div className="info__text">
                             <h3>
-                                <Link to={`/music_and_life/search/artist/${result.primary_artist.id}`}>{lyrics.primary_artist}</Link>
+                                <Link to={`/music_and_life/search/artist/${result.primary_artist.id}`}>{result.artist_names}</Link>
                             </h3>
                             <p className="description">{result.description_preview || ''}</p>
                             <p>Release date: {result.release_date_for_display}</p>
@@ -87,13 +99,15 @@ const InfoSong = () => {
                         </div>
                     </div>
                     <div className="info__lyrics">
-                        <h3>{lyrics.title}</h3>
+                        <h3>{result.full_title}</h3>
                         <div className="music">
                             <iframe src={result.apple_music_player_url} style={{border: 0, width: 460, height: 65}} title={lyrics.title}></iframe>
                         </div>
-                        {/* <div className="video" id={`youtube-player-${result.youtube_url.replace('http://www.youtube.com/watch?v=', '')}`} ref={YTIndividualsRef}></div> */}
-                        <div className="lyrics__text" dangerouslySetInnerHTML={{__html: text}}/>
+                        <div className="lyrics__text" dangerouslySetInnerHTML={{__html: text.length < 8 ? 'Unfortunately the lyrics of this song are not available on the site.' : text}}/>
                     </div>
+                </div>
+                <div className="btn-container">
+                    <ButtonToTop/> 
                 </div>
                 </>
                 : 

@@ -3,7 +3,7 @@
 .header {
     font-family: 'Acme', sans-serif;
     height: 10vh;
-    min-height: 55px;
+    min-height: 70px;
     width: 100%;
     padding: 0 50px;
     background-color: inherit;
@@ -103,9 +103,13 @@
 .bm-burger-button {
     position: absolute;
     width: 36px;
-    height: 30px;
+    height: 27px;
     left: 25px;
-    top: 20px;
+    top: 3.2%;
+}
+
+.bm-burger-bars {
+    border-radius: 3px;
 }
 
   /* Color/shape of burger icon bars */

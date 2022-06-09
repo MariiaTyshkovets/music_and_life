@@ -6,7 +6,7 @@ import Main from './Components/Main';
 function App () {
 
   const [appTheme, setAppTheme] = useState(
-    localStorage.getItem('theme')
+    localStorage.getItem('theme') === null ? 'white' : localStorage.getItem('theme')
   );
 
   useEffect (() => {

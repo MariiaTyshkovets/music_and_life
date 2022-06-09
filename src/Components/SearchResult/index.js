@@ -8,6 +8,7 @@ import Artists from "../Artists";
 import Albums from "../Albums";
 import axios from "axios";
 import Loading from "../Loading";
+import ButtonToTop from "../ButtonToTop";
 
 const SearchResult = () => {
 
@@ -16,42 +17,105 @@ const SearchResult = () => {
 
     const [loading, setLoading] = useState(true);
     const [searchText, setSearchText] = useState(text);
-    const [searchResult, setSearchResult] = useState('');
+    const [searchResultSongs, setSearchResultSongs] = useState('');
+    const [searchResultArtists, setSearchResultArtists] = useState('');
+    const [searchResultAlbums, setSearchResultAlbums] = useState('');
+    const [pageSongs, setPageSongs] = useState(1);
+    const [pageAlbums, setPageAlbums] = useState(1);
+    const [pageArtists, setPageArtists] = useState(1);
 
     const navigate = useNavigate();
-    const URL = 'https://genius-song-lyrics1.p.rapidapi.com';
-    const search = '/search/multi';
     
     useEffect( () => {
         searchInAPI();
     }, []) 
 
+    useEffect(() => {
+        let resultSong = '';
+
+        config.params.page = 1 + pageSongs;
+          
+        axios.request(config).then((res) => {
+            resultSong = res.data.response.sections[1].hits;
+        }).catch((error) => {
+            navigate("/music_and_life/error", {state: {error: error.message}});
+        }).finally(() => {
+            setSearchResultSongs((prevState) => prevState.concat(resultSong));
+        })
+    }, [pageSongs]) 
+
+    useEffect(() => {
+        let resultArtists = '';
+
+        config.params.page = 1 + pageArtists;
+          
+        axios.request(config).then((res) => {
+            resultArtists = res.data.response.sections[3].hits;
+        }).catch((error) => {
+            navigate("/music_and_life/error", {state: {error: error.message}});
+        }).finally(() => {
+            setSearchResultArtists((prevState) => prevState.concat(resultArtists));
+        })
+    }, [pageArtists])
+
+    useEffect(() => {
+        let resultAlbums = '';
+
+        config.params.page = 1 + pageAlbums;
+          
+        axios.request(config).then((res) => {
+            resultAlbums = res.data.response.sections[4].hits;
+        }).catch((error) => {
+            navigate("/music_and_life/error", {state: {error: error.message}});
+        }).finally(() => {
+            setSearchResultAlbums((prevState) => prevState.concat(resultAlbums));
+        })
+    }, [pageAlbums])
+
+    const config = {
+        method: 'GET',
+        url: 'https://genius-song-lyrics1.p.rapidapi.com/search/multi',
+        params: {q: searchText, per_page: '5', page: '1'},
+        headers: {
+          'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
+          'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
+        }
+    };
+
     const searchInAPI = () => {
         let result = '';
-    
-        const config = {
-            method: 'GET',
-            url: URL + search,
-            params: {q: searchText, per_page: '5', page: '1'},
-            headers: {
-              'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
-              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
-            }
-        };
+
+        config.params.page = '1';
           
         axios.request(config).then((res) => {
             result = res.data.response.sections;
         }).catch((error) => {
-            console.log(error.message);
             navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
-            setSearchResult(result);
+            setPageSongs(1);
+            setPageArtists(1);
+            setPageAlbums(1);
+            setSearchResultSongs(result[1].hits);
+            setSearchResultArtists(result[3].hits);
+            setSearchResultAlbums(result[4].hits);
             setLoading(false);
         })
     }
 
     const inputChange = (e) => {
         setSearchText(e.target.value)
+    }
+
+    const addSongs = () => {
+        setPageSongs((prevState) => prevState + 1);
+    }
+
+    const addArtists = () => {
+        setPageArtists((prevState) => prevState + 1);
+    }
+
+    const addAlbums = () => {
+        setPageAlbums((prevState) => prevState + 1);
     }
 
     return (
@@ -85,15 +149,40 @@ const SearchResult = () => {
                     </TabList>
 
                     <TabPanel>
-                        {loading ? <Loading/> : <Songs search={searchResult[1].hits}/>}
+                        {loading ? <Loading/> 
+                        : <>
+                            <Songs search={searchResultSongs}/>
+                            <div className={searchResultSongs.length === 0 ? 'btn-container none' : 'btn-container'}>
+                                <button type="button" className='btn' onClick={addSongs}>See More Songs</button>
+                            </div>
+                        </>}
                     </TabPanel>
                     <TabPanel>
-                        {!loading ? <Artists search={searchResult[3].hits}/> : <Loading/>} 
+                        {!loading ? 
+                        <>
+                            <Artists search={searchResultArtists}/> 
+                            <div className={searchResultArtists.length === 0 ? 'btn-container none' : 'btn-container'}>
+                                <button type="button" className='btn' onClick={addArtists}>See More Artists</button>
+                            </div>
+                        </>
+                        : <Loading/>} 
                     </TabPanel>
                     <TabPanel>
-                        {!loading ? <Albums search={searchResult[4].hits}/> : <Loading/>}
+                        {!loading ? 
+                        <>
+                            <Albums search={searchResultAlbums}/>
+                            <div className={searchResultAlbums.length === 0 ? 'btn-container none' : 'btn-container'}>
+                                <button type="button" className='btn' onClick={addAlbums}>See More Albums</button>
+                            </div>
+                        </> 
+                        : <Loading/>}
                     </TabPanel>
                 </Tabs>
+                {searchResultSongs.length > 1 ? 
+                <div className="btn-container">
+                    <ButtonToTop/>
+                </div>
+                : undefined}
             </section>
             <Footer />
         </>

@@ -8,6 +8,10 @@
 	margin: 0 auto;
 }
 
+.loader p {
+	background-color: transparent;
+}
+
 .bubble {
 	height: calc(12vmin * 1.5);
     width: calc(12vmin * 1.5);

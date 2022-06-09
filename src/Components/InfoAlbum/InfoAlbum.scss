@@ -2,7 +2,7 @@
 
 .info-album {
     min-height: 83vh;
-    padding: 40px 0;
+    padding: 40px 0 0;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -10,24 +10,40 @@
 .album__header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'album info artist';
     margin-bottom: 20px;
     align-items: center;
     text-align: center;
+    gap: 10px;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'album artist' 'info info';
+        gap: 20px;
+    }
 }
 
 .album__header h2 {
     font-size: 45px;
     line-height: 1.2;
     margin-bottom: 15px;
-    
-    
+        
     @include phone {
         font-size: 30px;
         margin-bottom: 10px;
     }
 }
 
+.album__img {
+    grid-area: album; 
+}
+
+.artist__img {
+    grid-area: artist; 
+}
+
 .header__info {
+    grid-area: info;
     display: flex;
     flex-direction: column;
     align-items: center;

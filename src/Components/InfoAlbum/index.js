@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import './InfoAlbum.scss';
 import axios from "axios";
 import Loading from "../Loading";
+import ButtonToTop from "../ButtonToTop";
 
 const InfoAlbum = () => {
 
@@ -17,6 +18,8 @@ const InfoAlbum = () => {
     const ID = params.id;
 
     useEffect(() => {
+        scrollToTop();
+
         let albumFromAPI = '';
         const options = {
             method: 'GET',
@@ -28,10 +31,9 @@ const InfoAlbum = () => {
         };
           
         axios.request(options).then((res) => {
-            console.log(res.data.response.album);
             albumFromAPI = res.data.response.album;
         }).catch(function (error) {
-            console.error(error);
+            navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
             setAlbum(albumFromAPI);
             setLoadingAlbum(false);
@@ -53,7 +55,6 @@ const InfoAlbum = () => {
         };
           
         axios.request(options).then((res) => {
-            console.log(res.data.response.album_appearances);
             songs = res.data.response.album_appearances;
         }).catch(function (error) {
             console.error(error);
@@ -61,7 +62,15 @@ const InfoAlbum = () => {
             setSongs(songs)
             setLoadingSongs(false);
           });
-    }, [])
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
 
     return (
         <>
@@ -98,6 +107,9 @@ const InfoAlbum = () => {
                             </div>)}
                         </div>
                     </main>
+                    <footer className="btn-container">
+                        <ButtonToTop/> 
+                    </footer>
                 </div>
                 : <Loading/>}
             </section>

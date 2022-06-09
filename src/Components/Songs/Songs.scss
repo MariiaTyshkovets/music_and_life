@@ -6,6 +6,9 @@
     @include tablet {
         padding: 20px 0;
     }
+    @include phone {
+        padding: 10px 0;
+    }
 }
 
 .song__item {
@@ -16,7 +19,13 @@
     cursor: pointer;
 
     @include tablet {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 125px 1fr;
+        padding: 15px;
+    }
+
+    @include phone {
+        grid-template-columns: 95px 1fr;
+        padding: 15px 10px;
     }
 }
 

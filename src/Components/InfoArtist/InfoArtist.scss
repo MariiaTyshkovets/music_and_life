@@ -16,12 +16,17 @@
     margin-bottom: 10px;
 }
 
-.info-artist a:hover {
-    color: rgb(240, 42, 16);
+.artist__description {
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.dark .info-artist p {
+.dark .artist__description {
     background: rgb(0, 0, 0, 0.6);
+}
+
+.info-artist a:hover {
+    color: rgb(240, 42, 16);
 }
 
 .artist__albums {
@@ -44,7 +49,7 @@
 .slick-prev, .slick-next {
     width: 30px;
     height: 30px;
-    top: 45%;
+    top: 43%;
 }
 
 .white .slick-prev:before, .white .slick-next:before  {

@@ -41,6 +41,10 @@ const Header = (props) => {
                             style={({ isActive }) => isActive ? (theme === 'white' ? activeStyle : activeStyleDark) : undefined}>
                                 Search
                         </NavLink>
+                        <NavLink to='/music_and_life/about'className="menu-item"
+                            style={({ isActive }) => isActive ? (theme === 'white' ? activeStyle : activeStyleDark) : undefined}>
+                                About
+                        </NavLink>
                     </Menu>
                 </div>
                 <div className="logo" onClick={() => navigate('/music_and_life/')}>
@@ -67,11 +71,10 @@ const Header = (props) => {
                             </NavLink>
                         </li>
                         <li>
-                            About
-                        </li>
-                        <li>
-                            Contact
-                            {/* <Link></Link> */}
+                            <NavLink to='/music_and_life/about'className="menu-item"
+                                style={({ isActive }) => isActive ? (theme === 'white' ? activeStyle : activeStyleDark) : undefined}>
+                                    About
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

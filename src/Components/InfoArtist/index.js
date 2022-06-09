@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading";
 import Footer from "../Footer";
 import './InfoArtist.scss';
 import Slider from "react-slick";
+import ButtonToTop from "../ButtonToTop";
 
 const InfoArtist = () => {    
 
@@ -14,8 +15,11 @@ const InfoArtist = () => {
     const [result, setResult] = useState(null);
 
     const parameters = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        scrollToTop();
+
         let resultAPI = '';
         const options1 = {
             method: 'GET',
@@ -30,7 +34,7 @@ const InfoArtist = () => {
         axios.request(options1).then(function (res) {   
             resultAPI = res.data.response.artist;
         }).catch(function (error) {
-            console.error(error);
+            navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
             setResult(resultAPI);
             setLoadingResult(false);
@@ -53,7 +57,7 @@ const InfoArtist = () => {
         axios.request(options2).then(function (res) {
             album = res.data.response;
         }).catch(function (error) {
-            console.error(error);
+            navigate("/music_and_life/error", {state: {error: error.message}});
         }).finally(() => {
             setAlbums(album);
             setLoadingAlbums(false);
@@ -83,8 +87,14 @@ const InfoArtist = () => {
             }
         ]
     };
- 
-    // для пагінації у albums є albums.next_page
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
 
     return (
         <>
@@ -99,7 +109,7 @@ const InfoArtist = () => {
                 }}>
                 </header>
                 <main>
-                    <div dangerouslySetInnerHTML={{__html: result.description.html.length > 8 ? result.description.html : ''}}/>
+                    <div className="artist__description" dangerouslySetInnerHTML={{__html: result.description.html.length > 8 ? result.description.html : ''}}/>
                     {albums.albums.length < 1 ? 
                     <div style={{ textAlign: 'center', fontSize: '20px', padding: '20px'}}>
                         Unfortunately, there is no information about the artist and his albums at the moment. Go to <Link to='/music_and_life/' style={{ fontWeight: '600' }}>HOME</Link> page.
@@ -116,6 +126,9 @@ const InfoArtist = () => {
                         </Slider>
                     </article>}
                 </main>
+                <footer className="btn-container">
+                   <ButtonToTop/> 
+                </footer>
                 </>
                 : 
                 <Loading/>}

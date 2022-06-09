@@ -1,0 +1,35 @@
+.contact__form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+}
+
+.contact__form label {
+    margin-bottom: 5px;
+}
+
+.contact__form input, .contact__form textarea {
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-bottom: 2px solid;
+    opacity: 0.4;
+}
+
+.dark .contact__form input, .dark .contact__form textarea {
+    border-bottom: 2px solid white;
+}
+
+.contact__form input {
+    margin-bottom: 20px;
+}
+
+.contact__form input:focus, .contact__form textarea:focus {
+    opacity: 1;
+}
