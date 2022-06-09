@@ -1,0 +1,64 @@
+@import "../../Assets/mixins"; 
+
+.songs {
+    padding: 20px;
+
+    @include tablet {
+        padding: 20px 0;
+    }
+    @include phone {
+        padding: 10px 0;
+    }
+}
+
+.song__item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+
+    @include tablet {
+        grid-template-columns: 125px 1fr;
+        padding: 15px;
+    }
+
+    @include phone {
+        grid-template-columns: 95px 1fr;
+        padding: 15px 10px;
+    }
+}
+
+.white .song__item:hover {
+    background-color: rgb(241, 241, 241, 0.6);
+}
+
+.dark .song__item:hover {
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+.song__text {
+    font-size: 25px;
+    line-height: 2;
+    padding: 15px;
+
+    @include phone {
+        font-size: 20px;
+    }
+}
+
+.song__text p {
+    font-family: 'Acme', sans-serif;
+    font-size: 35px;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: capitalize;
+
+    @include phone {
+        font-size: 25px;
+    }
+}
+
+.none {
+    display: none;
+}

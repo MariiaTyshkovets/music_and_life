@@ -1,0 +1,25 @@
+@import '../../Assets/mixins';
+
+.main {
+    min-height: 83vh;
+    margin: 0 20px;
+    color: black;
+    background: url('../../img/background.png') no-repeat;
+    background-position: right top;
+    background-size: auto 80vh;
+
+    @include tablet {
+        background-image: none;
+    }
+}
+
+.dark .main {
+    background: url('../../img/six.png') no-repeat;
+    background-position: right top;
+    background-size: auto 80vh;
+    color: white;
+
+    @include tablet {
+        background-image: none;
+    }
+}

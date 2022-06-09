@@ -1,0 +1,99 @@
+.switch {
+    width: 80px;
+    height: 40px;
+    background-color: rgb(103, 183, 225);
+    border-radius: 20px;
+    outline: none;
+    overflow: hidden;
+}
+
+.switch:hover {
+    box-shadow: 0 0 10px rgba(167, 161, 161);
+}
+
+.dark .switch {
+    background-color: rgb(106, 103, 103);
+}
+
+.dark .switch:hover {
+    box-shadow: 0 0 10px rgba(106, 103, 103);
+}
+
+.toggle-button {
+    transform: scale(0.8);
+    transform-origin: center center;
+}
+  
+.toggle {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-top: 2.5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle.dark {
+    background-color: white;
+    margin-left: 44px;
+}
+
+.toggle.dark:hover {
+    background-color: rgb(250, 237, 52);
+}
+
+.toggle.white {
+    background-color: rgb(248, 172, 30);
+    margin-left: 0;
+}
+
+.toggle.white:hover {
+    background-color: rgb(248, 88, 30);
+}
+  
+.moon-mask {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    margin: -45px 0 0 34px;
+    background-color: rgb(106, 103, 103);
+    border-radius: 50%;
+}
+
+.white .moon-mask {
+    background-color: rgb(103, 183, 225);
+}
+
+.toggle[todark='1'] {
+    animation: toDark 1s 1;
+    margin-left: 44px;
+    background-color: white;
+}
+
+.toggle[towhite='1'] {
+    animation: toWhite 1s 1;
+    margin-left: 0;
+    background-color: rgb(248, 88, 30);
+}
+
+@keyframes toDark {
+    0% {
+        margin-left: 0;
+        background-color: rgb(248, 88, 30);
+    }
+    100% {
+        margin-left: 44px;
+        background-color: white;
+    }
+}
+
+@keyframes toWhite {
+    0% {
+        margin-left: 44px;
+        background-color: rgb(250, 237, 52);
+    }
+    100% {
+        margin-left: 0;
+        background-color: rgb(248, 88, 30);
+    }
+}

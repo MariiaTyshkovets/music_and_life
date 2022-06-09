@@ -1,0 +1,63 @@
+.home {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.home h2 {
+    color: rgb(106, 103, 103);
+    font-weight: 300;
+    font-size: 50px;
+    backdrop-filter: blur(2px);
+    text-align: center;
+}
+
+.dark .home h2 {
+    color: white;
+}
+
+.heading {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.home span {
+    font-size: 70px;
+}
+
+.black {
+    color: rgb(51, 45, 45);
+}
+
+.dark .black {
+    color: rgb(251, 215, 215);
+}
+
+.blue {
+    color: rgb(49, 49, 163);
+}
+
+.pink {
+    color: rgb(184, 32, 60);
+}
+
+.dark .pink {
+    color: rgb(191, 12, 86);   
+}
+
+.red {
+    color: rgb(255, 30, 0);
+}
+
+.dark .red {
+    color: rgb(255, 0, 0);
+}
+
+.orange {
+    color: rgb(255, 132, 0);
+}

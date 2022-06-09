@@ -1,0 +1,50 @@
+.dark {
+    background-color: rgb(14, 13, 13);
+    color: rgb(251, 215, 215);
+}
+
+.white {
+    background-color: white;
+    color: rgb(106, 103, 103);
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.btn {
+    font-family: 'Acme', sans-serif;
+    line-height: 1;
+    padding: 20px 30px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    transition: .3s;
+    box-shadow: 0px 8px 15px rgb(255 255 255 / 20%);
+    background: white;
+    cursor: pointer;
+}
+
+.white .btn {
+    background: rgb(242, 240, 240);
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+}
+
+.btn-top {
+    padding: 16px 30px;
+}
+
+.btn:hover {
+    background: rgb(221, 63, 43);
+    box-shadow: 0px 15px 20px rgb(221 63 43 / 40%);
+    color: #fff;
+    transform: translateY(-7px);
+}

@@ -1,0 +1,78 @@
+@import '../../Assets/mixins';
+
+.info-artist {
+    padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 83vh;
+}
+
+.artist__header {
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.info-artist p {
+    margin-bottom: 10px;
+}
+
+.artist__description {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dark .artist__description {
+    background: rgb(0, 0, 0, 0.6);
+}
+
+.info-artist a:hover {
+    color: rgb(240, 42, 16);
+}
+
+.artist__albums {
+    padding: 30px 0;
+    margin: 0 20px;
+}
+
+.artist__albums h3 {
+    margin-left: 20px;
+}
+
+.slick-prev {
+    left: -30px;
+}
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-prev, .slick-next {
+    width: 30px;
+    height: 30px;
+    top: 43%;
+}
+
+.white .slick-prev:before, .white .slick-next:before  {
+    color: rgb(106, 103, 103);
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 30px;
+}
+
+.dark .slick-dots li.slick-active button:before {
+    color: white;
+}
+
+.dark .slick-dots li button:before {
+    color: white;
+}
+
+.album__item {
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.album__item:hover {
+    opacity: 0.75;
+} 

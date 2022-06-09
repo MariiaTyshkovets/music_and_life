@@ -1,0 +1,108 @@
+@import '../../Assets/mixins';
+
+.info-song {
+    padding: 30px 30px 0;
+    min-height: 83vh;
+
+    @include tablet {
+        padding: 30px 0 0 0;
+    }
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: 'about lyrics';
+    gap: 40px;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'lyrics' 'about';
+    }
+}
+
+.music {
+    // margin-bottom: 20px;
+    // padding-bottom: 20px;
+    // padding-left: 20px;
+    // border-radius: 10px;
+    // background-color: white;
+    @include phone {
+        display: none;   
+    }
+}
+
+.info__about {
+    grid-area: about;
+    font-size: 20px;
+}
+
+.info__lyrics {
+    grid-area: lyrics;
+}
+
+.info__album a {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.info__text p {
+    margin-bottom: 20px;
+}
+
+.info__lyrics h3, .lyrics__text {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240, 0.6);
+}
+
+.dark .info__lyrics h3, .dark .lyrics__text {
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+.info__img {
+    margin-bottom: 20px;
+}
+
+/* .music {
+    width: 350px;
+    height: 85px;
+    overflow-x: scroll;
+} */
+
+.youtube {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: max-content min-content;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.youtube p {
+    margin-bottom: 6px;
+}
+
+.info a {
+    cursor: pointer;
+    text-decoration-line: none;
+    font-weight: 500;
+}
+
+.info a:hover {
+    color: rgb(240, 42, 16);
+}
+
+.img-youtube {
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.img-youtube:hover {
+    cursor: pointer;
+    opacity: 1;
+}
