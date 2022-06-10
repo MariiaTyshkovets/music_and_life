@@ -81,7 +81,7 @@ const InfoSong = () => {
                 <div className="info">
                     <div className='info__about'>
                         <div className="info__img">
-                        <img src={result.header_image_url} alt={lyrics.title} title={result.full_title}/>
+                            <img src={result.header_image_url} alt={lyrics.title} title={result.full_title}/>
                         </div>
                         <div className="info__text">
                             <h3>
