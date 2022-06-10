@@ -27,7 +27,6 @@ const InfoSong = () => {
             params: {text_format: 'dom'},
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
-              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
           
@@ -49,7 +48,6 @@ const InfoSong = () => {
             url: `https://genius-song-lyrics1.p.rapidapi.com/songs/${parameters.id}/lyrics`,
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
-              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
 
@@ -81,7 +79,7 @@ const InfoSong = () => {
                 <div className="info">
                     <div className='info__about'>
                         <div className="info__img">
-                        <img src={result.header_image_url} alt={lyrics.title} title={result.full_title}/>
+                            <img src={result.header_image_url} alt={lyrics.title} title={result.full_title}/>
                         </div>
                         <div className="info__text">
                             <h3>

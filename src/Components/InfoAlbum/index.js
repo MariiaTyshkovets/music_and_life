@@ -26,7 +26,6 @@ const InfoAlbum = () => {
             url: `https://genius-song-lyrics1.p.rapidapi.com/albums/${ID}`,
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
-              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
           
@@ -50,7 +49,6 @@ const InfoAlbum = () => {
             params: {per_page: '20', page: '1'},
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
-              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
           

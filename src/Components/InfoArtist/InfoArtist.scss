@@ -64,6 +64,12 @@
     color: white;
 }
 
+.slick-dots {
+    @include phone {
+        bottom: -40px;
+    }
+} 
+
 .dark .slick-dots li button:before {
     color: white;
 }
