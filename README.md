@@ -10,11 +10,11 @@ You can open this project in your browser: [Music&Life](https://mariiatyshkovets
 
 ## About me
 
-*I love music,
-*Promising Frontend Developer,
-*I am constantly improving my skills
+* I love music,
+* Promising Frontend Developer,
+* I am constantly improving my skills
 
 ### My links
 
-*[Facebook](https://www.facebook.com/mariia.tyshkovets),
-*[LinkedIn](https://www.linkedin.com/in/mariia-tyshkovets-8541b6209/)
+* [Facebook](https://www.facebook.com/mariia.tyshkovets),
+* [LinkedIn](https://www.linkedin.com/in/mariia-tyshkovets-8541b6209/)
