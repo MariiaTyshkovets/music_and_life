@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/music_and_life/static/css/main.93eb667f.css",
-    "main.js": "/music_and_life/static/js/main.5e8731a8.js",
+    "main.css": "/music_and_life/static/css/main.8aa04279.css",
+    "main.js": "/music_and_life/static/js/main.b1414c48.js",
     "static/media/pngwing.com.png": "/music_and_life/static/media/pngwing.com.b8aef9378b251d9a7af0.png",
     "static/media/music-background.png": "/music_and_life/static/media/music-background.725ab5b8c7c85010c839.png",
     "static/media/six.png": "/music_and_life/static/media/six.6b97f925e4da2310f811.png",
@@ -16,11 +16,11 @@
     "static/media/slick.ttf": "/music_and_life/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/music_and_life/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/music_and_life/index.html",
-    "main.93eb667f.css.map": "/music_and_life/static/css/main.93eb667f.css.map",
-    "main.5e8731a8.js.map": "/music_and_life/static/js/main.5e8731a8.js.map"
+    "main.8aa04279.css.map": "/music_and_life/static/css/main.8aa04279.css.map",
+    "main.b1414c48.js.map": "/music_and_life/static/js/main.b1414c48.js.map"
   },
   "entrypoints": [
-    "static/css/main.93eb667f.css",
-    "static/js/main.5e8731a8.js"
+    "static/css/main.8aa04279.css",
+    "static/js/main.b1414c48.js"
   ]
 }
