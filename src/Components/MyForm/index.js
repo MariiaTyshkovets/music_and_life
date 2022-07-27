@@ -1,38 +1,52 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import './MyForm.scss'
+import { sendForm } from "@emailjs/browser";
 
 const MyForm = () => {
 
-    const [name, setName] = useState('');
-    const [mail, setMail] = useState('');
-    const [message, setMessage] = useState('');
+    // const [name, setName] = useState('');
+    // const [mail, setMail] = useState('');
+    // const [message, setMessage] = useState('');
 
-    const inputName = (e) => {
-        setName(e.target.value)
-    }
+    // const inputName = (e) => {
+    //     setName(e.target.value)
+    // }
 
-    const inputMail = (e) => {
-        setMail(e.target.value)
-    }
+    // const inputMail = (e) => {
+    //     setMail(e.target.value)
+    // }
 
-    const inputMessage = (e) => {
-        setMessage(e.target.value)
+    // const inputMessage = (e) => {
+    //     setMessage(e.target.value)
+    // }
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        sendForm('gmail', 'music_and_life', form.current, 'WLOwrXTxbuLY3xrxH')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+
+        e.target.reset();
     }
 
     return (
-        <>
-        <form className="contact__form" encType="text/plain">
+        <form ref={form} className="contact__form" encType="text/plain" onSubmit={sendEmail}>
             <label htmlFor="name">Name:</label>
-            <input value={name} type='text' name="name" required onChange={inputName}/>    
+            <input type='text' name="name" required />    
             <label htmlFor="email">Email:</label>
-            <input value={mail} type='email' name='email' required onChange={inputMail}/>    
+            <input type='email' name='email' required/>    
             <label>Your message:</label>
-            <textarea value={message} rows='1' required onChange={inputMessage}></textarea>
+            <textarea rows='1' required name="message"></textarea>
             <div className="btn-container">
-                <button className="btn" type="submit"><a href={`mailto:maria15021996@gmail.com?subject=message_from_music_site&body=${message}`}>Send me</a></button>
+                <button className="btn" type="submit">Send me</button>
             </div>                    
         </form>
-        </>
     )
 }
 
