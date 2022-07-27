@@ -30,13 +30,15 @@ const Switch = (props) => {
     
     return (
         <>
-            <div className="switch">
+            <div className="switch"
+                onClick={() => changeTheme()}
+                onAnimationEnd={() => afterAnimation()}
+            >
                 <div className="toggle-button">
-                    <div className={`toggle ${theme}`} 
-                        onClick={() => changeTheme()}
-                        onAnimationEnd={() => afterAnimation()}
+                    <div className={`toggle ${theme}`}
                         todark={toDark}
                         towhite={toWhite}>
+
                     </div>
                     <div className="moon-mask"></div>
                 </div>

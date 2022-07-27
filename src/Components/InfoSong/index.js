@@ -27,6 +27,7 @@ const InfoSong = () => {
             params: {text_format: 'dom'},
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
+              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
           
@@ -48,6 +49,7 @@ const InfoSong = () => {
             url: `https://genius-song-lyrics1.p.rapidapi.com/songs/${parameters.id}/lyrics`,
             headers: {
               'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com',
+              'X-RapidAPI-Key': 'f4bbc5c731msh43798f50d4907c6p14e374jsn2f36c384a47a'
             }
         };
 
